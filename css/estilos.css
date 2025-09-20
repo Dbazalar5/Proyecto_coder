@@ -1,0 +1,196 @@
+/* =========================================================
+   POLITÉCNICO – Estilos unificados
+   ========================================================= */
+
+/* ---------- Variables y base ---------- */
+:root{
+  --brand-1:#023048;     /* azul principal */
+  --brand-2:#F5B639;     /* amarillo/acento */
+  --ink-1:#0b2239;       /* texto principal */
+  --ink-2:#4a5568;       /* texto secundario */
+  --bg-1:#ffffff;
+  --bg-2:#f5f3f0;        /* fondo secciones claras */
+  --radius:12px;
+  --shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{ margin:0; font-family:"Montserrat", system-ui, Arial, sans-serif; color:var(--ink-1); background:var(--bg-1); }
+a{ color:inherit; text-decoration:none; }
+a:hover{ text-decoration:underline; }
+img{ display:block; max-width:100%; height:auto; }
+.text-justify{ text-align:justify; }
+
+/* ---------- Topbar ---------- */
+.topbar{ background:var(--brand-1); color:#fff; font-size:.95rem; }
+.topbar a{ color:#fff; }
+.topbar ul{
+  list-style:none; padding-left:0; margin:0;
+  display:flex; gap:1rem; align-items:center;
+}
+.topbar li{ display:flex; gap:.4rem; align-items:center; }
+.topbar i{ line-height:1; }
+
+/* ---------- Header / Navbar ---------- */
+.lema{ color:#003366; font-weight:700; margin:0; }
+.nav-main{ background:var(--brand-1); }
+.nav-main .nav-link{ transition:color .2s ease; }
+.nav-main .nav-link:hover,
+.nav-main .navbar-brand:hover{ color:var(--brand-2) !important; }
+
+/* =========================================================
+   INICIO (index.html)
+   ========================================================= */
+
+/* Hero (Carrusel + Texto) */
+.hero{ padding-block:1.5rem; }
+.hero .carousel-inner{ border-radius:var(--radius); box-shadow:var(--shadow); }
+.text-fit h1{ font-size:clamp(1.3rem, 2vw + 1rem, 1.8rem); margin-bottom:1rem; }
+.text-fit p{ max-width:58ch; font-size:clamp(.95rem,1vw + .6rem,1.05rem); line-height:1.6; margin:0; }
+
+/* Carrusel responsivo (altura controlada) */
+#carouselPortada .carousel-item img{
+  height:220px; object-fit:cover; border-radius:var(--radius);
+}
+@media (min-width:768px){
+  #carouselPortada .carousel-item img{ height:300px; }
+}
+@media (min-width:1200px){
+  #carouselPortada .carousel-item img{ height:380px; }
+}
+
+/* Banner con texto superpuesto */
+.banner{ background:transparent; }
+.banner .container-xxl{ position:relative; }
+.banner-img{
+  width:100%; height:280px; object-fit:cover; border-radius:12px;
+}
+/* Overlay suave para contraste del texto */
+.banner .container-xxl::after{
+  content:""; position:absolute; inset:0; border-radius:12px;
+  background:linear-gradient(180deg, rgba(250,177,83,.22), rgba(240,156,31,.05) 55%, rgba(0,0,0,0));
+  pointer-events:none; z-index:1;
+}
+/* Tarjeta superpuesta */
+.banner-card{
+  position:absolute; bottom:.9rem;
+  left:var(--bs-gutter-x, 1rem); right:var(--bs-gutter-x, 1rem);
+  z-index:2; max-width:520px;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+  padding:1rem 1.25rem; border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.banner-card h2{
+  margin:0 0 .8rem; line-height:1.25; font-weight:700; color:#003366;
+  font-size:clamp(1.15rem, 1.6vw + .7rem, 1.6rem);
+}
+.banner-card p{
+  margin:0; line-height:1.6; max-width:62ch;
+  font-size:clamp(.92rem, 1vw + .45rem, 1rem);
+}
+@media (min-width:768px){ .banner-img{ height:320px; } }
+@media (min-width:992px){
+  .banner-img{ height:360px; }
+  .banner-card{ left:1.25rem; right:auto; }
+}
+
+/* Comunicados (cards) */
+.com-card{ border-radius:var(--radius); box-shadow:var(--shadow); }
+
+/* Especialidades (grid de cards con etiqueta) */
+.spec-card{ position:relative; border:0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
+.spec-card img{ height:220px; object-fit:cover; }
+.spec-label{
+  position:absolute; left:0; right:0; bottom:0;
+  background:var(--brand-1); color:#fff; text-align:center;
+  padding:.6rem .8rem; font-weight:700; font-size:.95rem;
+}
+
+/* =========================================================
+   NOSOTROS (pages/nosotros.html)
+   ========================================================= */
+
+/* Encabezado de sección */
+.hero-nosotros{ background:var(--bg-2); }
+.hero-nosotros .lead{ max-width:70ch; }
+
+/* Paneles reutilizables */
+.panel{
+  background:#fff; border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:1rem 1.25rem;
+}
+.panel-title{ margin:0 0 .6rem; font-weight:700; color:#003366; }
+
+/* Tarjetas de info (misión/visión/cuadros extra) */
+.card-info{
+  border:0; border-radius:var(--radius); box-shadow:var(--shadow);
+}
+
+/* Lista institucional simple */
+.list-institucional{ margin:0; padding-left:1rem; }
+.list-institucional li{ margin:.3rem 0; }
+
+/* Docentes (cards) */
+.docente-card{ border:0; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; }
+.docente-card img{ height:220px; object-fit:cover; }
+
+/* =========================================================
+   SERVICIOS (pages/servicios.html)
+   ========================================================= */
+
+/* Sección intro (texto + imagen) */
+.sectionyo1{ padding:2rem 0; }
+.sectionyo1 .texto1 h1{ font-size:clamp(1.4rem, 1.8vw + 1rem, 2rem); margin:0 0 .75rem; color:#003366; }
+.sectionyo1 .texto1 p{ line-height:1.7; color:var(--ink-2); }
+.sectionyo1 .miimagen1 img{ width:100%; max-width:520px; margin-inline:auto; }
+
+
+
+/* Cuadrícula de atajos (calendario, bienestar, etc.) */
+.sectionyo{ padding:1rem 0 2rem; }
+.cuadrados1{
+  display:grid; gap:1rem;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+}
+@media (min-width:768px){ .cuadrados1{ grid-template-columns: repeat(4, minmax(0,1fr)); } }
+.cuadrados1 > div{
+  background:#fff; border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:1rem; text-align:center; transition:transform .15s ease;
+}
+.cuadrados1 > div:hover{ transform:translateY(-3px); }
+.cuadrados1 img{ width:56px; height:56px; object-fit:contain; margin:0 auto .5rem; }
+.cuadrados1 p{ margin:0; font-weight:600; }
+
+/* Bloques de texto (normas / certificaciones / importancia) */
+.normas1, .certificaciones, .solicitud-certificacion, .importancia-certificacion{
+  padding:1rem 0; max-width:80ch; margin-inline:auto;
+}
+.normas1 ul, .certificaciones ul{ padding-left:1.2rem; }
+.solicitud-certificacion ol{ padding-left:1.2rem; }
+
+/* =========================================================
+   CONTACTO (pages/contacto.html)
+   ========================================================= */
+
+.contacto .info a{ text-decoration:none; }
+.contacto .btn-icon{
+  width:36px; height:36px; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:#f5f5f5; color:#333; border:1px solid #eaeaea;
+}
+.contacto .btn-icon:hover{ background:#eaeaea; }
+
+/* Ajustes de formulario Bootstrap */
+.contacto .form-label{ font-weight:600; color:#003366; }
+.contacto .card{ border-radius:var(--radius); box-shadow:var(--shadow); }
+
+/* =========================================================
+   FOOTER (global)
+   ========================================================= */
+.site-footer{ background:var(--bg-2); padding-block:24px; }
+.site-footer a{ color:var(--ink-1); }
+.copy{ color:var(--ink-2); font-size:.9rem; }
+.footer-logo-big{ max-height:200px; width:auto; object-fit:contain; }
+
+
