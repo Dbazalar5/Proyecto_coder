@@ -11,7 +11,7 @@ Thumbs.db
 .idea/
 
 # ==========================
-# Dependencias de Node.js (si en algún momento usas)
+# Dependencias de Node.js 
 # ==========================
 node_modules/
 npm-debug.log*
