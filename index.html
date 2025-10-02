@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>POLITÉCNICO</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS (uso puntual: navbar + carrusel) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
 
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/cf472bf137.js" crossorigin="anonymous"></script>
+  <!-- Font Awesome (solo CSS, sin kit JS) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -20,36 +20,35 @@
   <!-- Favicon -->
   <link rel="icon" href="https://www.poli.edu.pe/wp-content/uploads/2021/08/cropped-INSIGNIA-POLITECNICO-32x32.png" sizes="32x32"/>
 
-  <!-- Estilos -->
+  <!-- Estilos propios -->
   <link rel="stylesheet" href="css/estilos.css" />
 </head>
 
 <body>
-
-  <!-- Topbar -->
+  <!-- Topbar (propio, sin utilidades Bootstrap) -->
   <section class="topbar">
-    <div class="container-xxl py-2 d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <ul class="d-flex gap-3 m-0">
-        <li><i class="fa-solid fa-phone-flip me-1"></i><a href="tel:+51321126">+51 321 126</a></li>
-        <li><i class="fa-regular fa-envelope me-1"></i><a href="mailto:informes@poli.edu.pe">informes@poli.edu.pe</a></li>
+    <div class="container topbar__inner">
+      <ul class="topbar__list">
+        <li><i class="fa-solid fa-phone-flip"></i> <a href="tel:+51321126">+51 321 126</a></li>
+        <li><i class="fa-regular fa-envelope"></i> <a href="mailto:informes@poli.edu.pe">informes@poli.edu.pe</a></li>
       </ul>
-      <span class="d-flex align-items-center">
-        <i class="fa-solid fa-location-dot me-1"></i> Av. Circunvalación Oeste 298 – Urb. Santa María – Juliaca
+      <span class="topbar__addr">
+        <i class="fa-solid fa-location-dot"></i> Av. Circunvalación Oeste 298 – Urb. Santa María – Juliaca
       </span>
     </div>
   </section>
 
-  <!-- Header -->
-  <header class="py-3">
-    <div class="container-xxl d-flex flex-wrap justify-content-between align-items-center gap-3">
-      <img src="imagenes/logo.png" alt="Politécnico - Logo" class="img-fluid" style="max-height:80px" />
-      <p class="lema m-0 text-center text-md-start">Un Politecniano Ejemplo de Disciplina, Cultura y Tecnología.</p>
+  <!-- Header (propio) -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <img src="imagenes/logo.png" alt="Politécnico - Logo" class="brand-logo" />
+      <p class="lema">Un Politecniano Ejemplo de Disciplina, Cultura y Tecnología.</p>
     </div>
   </header>
 
-  <!-- Navbar -->
+  <!-- Navbar (Bootstrap; único lugar junto con el carrusel) -->
   <nav class="navbar navbar-expand-lg nav-main">
-    <div class="container-xxl">
+    <div class="container">
       <a class="navbar-brand text-white fw-semibold" href="index.html">POLITÉCNICO</a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
               aria-controls="mainNav" aria-expanded="false" aria-label="Menú">
@@ -66,13 +65,13 @@
     </div>
   </nav>
 
-  <!-- Hero (carrusel + texto) -->
-  <section class="hero py-4">
-    <div class="container-xxl">
-      <div class="row g-4 align-items-center">
-
-        <!-- Carrusel -->
-        <div class="col-12 col-lg-6">
+  <!-- Contenido principal -->
+  <main>
+    <!-- Hero (carrusel Bootstrap + copy con clases propias) -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <!-- Carrusel (Bootstrap) -->
+        <div class="hero__carousel">
           <div id="carouselPortada" class="carousel slide" data-bs-ride="carousel" aria-label="Galería de portada">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselPortada" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -101,10 +100,10 @@
           </div>
         </div>
 
-        <!-- Texto -->
-        <div class="col-12 col-lg-6 text-fit">
-          <h1 class="h2">MODELO EDUCATIVO</h1>
-          <p class="lead fs-6 text-justify">
+        <!-- Texto (propio) -->
+        <div class="hero__copy">
+          <h1>MODELO EDUCATIVO</h1>
+          <p class="text-justify">
             Al iniciarse las actividades de este nuevo año escolar, les damos la más cordial bienvenida a todos los integrantes
             de la Familia Politecniana. Saludamos a quienes se incorporan a nuestra institución, invitándolos a participar del
             quehacer educativo. El Colegio Politécnico de Juliaca asume el ideario de una formación integral, respetando la
@@ -113,161 +112,140 @@
           </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Banner -->
-  <section class="py-5 banner">
-    <div class="container-xxl position-relative">
-      <img src="imagenes/student4.webp" class="img-fluid w-100 banner-img" alt="Estudiantes del Politécnico">
-      <div class="banner-card">
-        <h2 class="h4 mb-2">75 Años de Educación</h2>
-        <p class="mb-0">
-          Renovamos nuestro compromiso de formar estudiantes íntegros, con valores y competencias técnicas que les
-          permitan alcanzar una mejor calidad de vida. Invitamos a toda la familia Politecniana a integrarse activamente
-          a nuestro quehacer educativo.
-        </p>
+    <!-- Banner (propio, sin utilidades Bootstrap) -->
+    <section class="banner">
+      <div class="container banner__wrap">
+        <img src="imagenes/student4.webp" class="banner-img" alt="Estudiantes del Politécnico">
+        <div class="banner-card">
+          <h2>75 Años de Educación</h2>
+          <p>
+            Renovamos nuestro compromiso de formar estudiantes íntegros, con valores y competencias técnicas que les
+            permitan alcanzar una mejor calidad de vida. Invitamos a toda la familia Politecniana a integrarse activamente
+            a nuestro quehacer educativo.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Comunicados + Video -->
-  <section class="py-5 bg-light">
-    <div class="container-xxl">
-      <div class="row g-4">
-        <div class="col-12 col-lg-4">
-          <div class="d-grid gap-3">
-            <!-- Cards de comunicado (mock) -->
-            <article class="com-card card">
-              <div class="row g-0 align-items-center">
-                <div class="col-3 p-2"><img src="https://www.poli.edu.pe/wp-content/uploads/2021/09/COMUNICADOLOGO-2-150x100.jpg" class="img-fluid rounded" alt="Aviso"></div>
-                <div class="col-9 p-2">
-                  <h3 class="h6 mb-1">Comunicado Prueba</h3>
-                  <small class="text-muted d-block mb-1">2 de abril de 2025</small>
-                  <p class="mb-0 small">Este comunicado es de prueba</p>
-                </div>
+    <!-- Comunicados + Video (propio) -->
+    <section class="comunicados">
+      <div class="container">
+        <div class="grid-2">
+          <div class="com__lista">
+            <article class="com-card">
+              <div class="com-card__img">
+                <img src="https://www.poli.edu.pe/wp-content/uploads/2021/09/COMUNICADOLOGO-2-150x100.jpg" alt="Aviso">
+              </div>
+              <div class="com-card__body">
+                <h3 class="h6">Comunicado Prueba</h3>
+                <small class="muted">2 de abril de 2025</small>
+                <p class="small">Este comunicado es de prueba</p>
               </div>
             </article>
-            <article class="com-card card">
-              <div class="row g-0 align-items-center">
-                <div class="col-3 p-2"><img src="https://www.poli.edu.pe/wp-content/uploads/2021/09/COMUNICADOLOGO-2-150x100.jpg" class="img-fluid rounded" alt="Aviso"></div>
-                <div class="col-9 p-2">
-                  <h3 class="h6 mb-1">Comunicado Prueba</h3>
-                  <small class="text-muted d-block mb-1">2 de abril de 2025</small>
-                  <p class="mb-0 small">Este comunicado es de prueba</p>
-                </div>
+            <article class="com-card">
+              <div class="com-card__img">
+                <img src="https://www.poli.edu.pe/wp-content/uploads/2021/09/COMUNICADOLOGO-2-150x100.jpg" alt="Aviso">
+              </div>
+              <div class="com-card__body">
+                <h3 class="h6">Comunicado Prueba</h3>
+                <small class="muted">2 de abril de 2025</small>
+                <p class="small">Este comunicado es de prueba</p>
               </div>
             </article>
-            <article class="com-card card">
-              <div class="row g-0 align-items-center">
-                <div class="col-3 p-2"><img src="https://www.poli.edu.pe/wp-content/uploads/2021/09/COMUNICADOLOGO-2-150x100.jpg" class="img-fluid rounded" alt="Aviso"></div>
-                <div class="col-9 p-2">
-                  <h3 class="h6 mb-1">Comunicado Prueba</h3>
-                  <small class="text-muted d-block mb-1">2 de abril de 2025</small>
-                  <p class="mb-0 small">Este comunicado es de prueba</p>
-                </div>
+            <article class="com-card">
+              <div class="com-card__img">
+                <img src="https://www.poli.edu.pe/wp-content/uploads/2021/09/COMUNICADOLOGO-2-150x100.jpg" alt="Aviso">
+              </div>
+              <div class="com-card__body">
+                <h3 class="h6">Comunicado Prueba</h3>
+                <small class="muted">2 de abril de 2025</small>
+                <p class="small">Este comunicado es de prueba</p>
               </div>
             </article>
           </div>
-        </div>
 
-        <div class="col-12 col-lg-8">
-          <h2 class="h4 mb-3">Sobre Nosotros</h2>
-          <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm">
-            <iframe src="https://www.youtube.com/embed/Gcywm2pD3ac" title="Video institucional del Politécnico"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+          <div>
+            <h2 class="h4">Sobre Nosotros</h2>
+            <div class="video16x9">
+              <iframe src="https://www.youtube.com/embed/Gcywm2pD3ac" title="Video institucional del Politécnico"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Especialidades -->
-  <section class="py-4">
-    <div class="container-xxl">
-      <h2 class="h3 mb-4">Nuestras Especialidades</h2>
-      <div class="row g-4">
-        <div class="col-6 col-md-4 col-lg-3">
-          <article class="card spec-card">
-            <img src="imagenes/carreras/carpinteria.webp" class="card-img-top" alt="Carpintería" />
+    <!-- Especialidades (propio) -->
+    <section class="especialidades">
+      <div class="container">
+        <h2 class="h3">Nuestras Especialidades</h2>
+        <div class="cards-grid">
+          <article class="spec-card">
+            <img src="imagenes/carreras/carpinteria.webp" alt="Carpintería" />
             <div class="spec-label">CARPINTERÍA</div>
           </article>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <article class="card spec-card">
-            <img src="imagenes/carreras/computacion-e-informatica.webp" class="card-img-top" alt="Computación e Informática" />
+          <article class="spec-card">
+            <img src="imagenes/carreras/computacion-e-informatica.webp" alt="Computación e Informática" />
             <div class="spec-label">COMPUTACIÓN E INFORMÁTICA</div>
           </article>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <article class="card spec-card">
-            <img src="imagenes/carreras/contruccion-civil.webp" class="card-img-top" alt="Construcción Civil" />
+          <article class="spec-card">
+            <img src="imagenes/carreras/contruccion-civil.webp" alt="Construcción Civil" />
             <div class="spec-label">CONSTRUCCIÓN CIVIL</div>
           </article>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <article class="card spec-card">
-            <img src="imagenes/carreras/electricidad.webp" class="card-img-top" alt="Electricidad" />
+          <article class="spec-card">
+            <img src="imagenes/carreras/electricidad.webp" alt="Electricidad" />
             <div class="spec-label">ELECTRICIDAD</div>
           </article>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <article class="card spec-card">
-            <img src="imagenes/carreras/electronica.webp" class="card-img-top" alt="Electrónica" />
+          <article class="spec-card">
+            <img src="imagenes/carreras/electronica.webp" alt="Electrónica" />
             <div class="spec-label">ELECTRÓNICA</div>
           </article>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <article class="card spec-card">
-            <img src="imagenes/carreras/mecanica-automotriz.webp" class="card-img-top" alt="Mecánica Automotriz" />
+          <article class="spec-card">
+            <img src="imagenes/carreras/mecanica-automotriz.webp" alt="Mecánica Automotriz" />
             <div class="spec-label">MECÁNICA AUTOMOTRIZ</div>
           </article>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <article class="card spec-card">
-            <img src="imagenes/carreras/mecanico-industrial.webp" class="card-img-top" alt="Mecánico Industrial" />
+          <article class="spec-card">
+            <img src="imagenes/carreras/mecanico-industrial.webp" alt="Mecánico Industrial" />
             <div class="spec-label">MECÁNICO INDUSTRIAL</div>
           </article>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <article class="card spec-card">
-            <img src="imagenes/carreras/textil.webp" class="card-img-top" alt="Textil" />
+          <article class="spec-card">
+            <img src="imagenes/carreras/textil.webp" alt="Textil" />
             <div class="spec-label">TEXTIL</div>
           </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Footer -->
+  <!-- Footer (propio) -->
   <footer class="site-footer">
-    <div class="container-xxl">
-      <div class="row g-4 align-items-start">
-        <div class="col-12 col-md-6 col-lg-5">
-          <p class="mb-1"><a href="tel:+51321126" class="fw-semibold">(01) 321 126</a></p>
-          <p class="mb-2"><a href="mailto:informes@poli.edu.pe">informes@poli.edu.pe</a></p>
-          <p class="mb-0 small text-justify">La Institución Educativa Secundaria Pública “Politécnico Regional Los Andes” de Juliaca se creó el 15 de mayo de 1928 por Resolución Suprema N° 569...</p>
-        </div>
-        <div class="col-6 col-md-3 col-lg-3">
-          <h3 class="h6">CONTROL</h3>
-          <img src="imagenes/logos/logo-minedu.png" class="img-fluid" alt="Logo MINEDU" />
-          <h3 class="h6 mt-3">AFILIADOS</h3>
-          <img src="imagenes/logos/logo-Dreppng-removebg-preview.png" class="img-fluid" alt="Logo DREP" />
-        </div>
-        <div class="col-6 col-md-3 col-lg-4">
-          <h3 class="h6">ALIANZA CON</h3>
-          <img src="imagenes/logos/499752886_989433863349608_5351641011497920617_n-removebg-preview.png"
-               class="img-fluid footer-logo-big" alt="Logo aliado" />
-        </div>
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <p class="mb-1"><a href="tel:+51321126" class="fw-semibold">(01) 321 126</a></p>
+        <p class="mb-2"><a href="mailto:informes@poli.edu.pe">informes@poli.edu.pe</a></p>
+        <p class="mb-0 small text-justify">La Institución Educativa Secundaria Pública “Politécnico Regional Los Andes” de Juliaca se creó el 15 de mayo de 1928 por Resolución Suprema N° 569...</p>
       </div>
-      <p class="copy text-center mt-3 mb-0">© 2025 Politécnico Regional Los Andes. Todos los derechos reservados.</p>
+      <div class="footer__col">
+        <h3 class="h6">CONTROL</h3>
+        <img src="imagenes/logos/logo-minedu.png" alt="Logo MINEDU" />
+        <h3 class="h6 mt-3">AFILIADOS</h3>
+        <img src="imagenes/logos/logo-Dreppng-removebg-preview.png" alt="Logo DREP" />
+      </div>
+      <div class="footer__col">
+        <h3 class="h6">ALIANZA CON</h3>
+        <img src="imagenes/logos/499752886_989433863349608_5351641011497920617_n-removebg-preview.png" class="footer-logo-big" alt="Logo aliado" />
+      </div>
     </div>
+    <p class="copy">© 2025 Politécnico Regional Los Andes. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Bootstrap JS -->
+  <!-- ÚNICO script permitido: Bootstrap bundle (para navbar/carrusel). No hay JS propio -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
           crossorigin="anonymous"></script>
 </body>
 </html>
+
