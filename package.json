@@ -1,0 +1,24 @@
+{
+  "name": "proyecto_coder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass scss/main.scss css/estilos.css --watch",
+    "build": "sass scss/estilos.scss css/estilos.css --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dbazalar5/Proyecto_coder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dbazalar5/Proyecto_coder/issues"
+  },
+  "homepage": "https://github.com/Dbazalar5/Proyecto_coder#readme",
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}

@@ -1,0 +1,47 @@
+@use "sass:list";        // módulo oficial para listas
+@use "variables" as vars;
+@use "mixins" as mix;
+
+// ==============================================
+// UTILIDADES: helpers y utilidades generadas con listas
+// Usa list.length / list.nth (evita deprecations)
+// ==============================================
+
+// Lista de espaciados (puedes agregar más valores si quieres)
+$spacers: 0, .25rem, .5rem, .75rem, 1rem, 1.25rem, 1.5rem, 2rem;
+
+// Genera clases utilitarias basadas en $spacers:
+// .mt-1, .mb-1, .p-1, etc.
+@for $i from 1 through list.length($spacers) {
+  $v: list.nth($spacers, $i);
+  .mt-#{$i} { margin-top: $v; }
+  .mb-#{$i} { margin-bottom: $v; }
+  .p-#{$i}  { padding: $v; }
+}
+
+// Grids utilitarios reutilizables
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @include mix.up(768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cards-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @include mix.up(768px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+// Helpers sueltos
+.text-muted { color: vars.color(ink-2) !important; }
+.gap-1      { gap: .75rem; }
+.mt-2       { margin-top: .75rem; }
+.span-2     { grid-column: 1 / -1; }

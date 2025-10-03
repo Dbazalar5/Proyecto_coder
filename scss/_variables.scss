@@ -1,0 +1,42 @@
+// ==============================================
+// VARIABLES / TOKENS (colores, radios, sombras)
+// Incluye mapas + helpers actualizados con sass:map
+// ==============================================
+
+// Importa módulo oficial de Sass para manejar mapas
+@use "sass:map";
+
+// Paleta de colores como MAP (más flexible que variables sueltas)
+$colors: (
+  brand-1: #023048, // azul principal
+  brand-2: #F5B639, // amarillo/acento
+  ink-1:   #0b2239, // texto principal
+  ink-2:   #4a5568, // texto secundario
+  bg-1:    #ffffff, // fondo base
+  bg-2:    #f5f3f0  // fondo secciones claras
+);
+
+// Radios y sombras como mapas (permite variar por tamaño)
+$radii: (
+  md: 12px
+);
+
+$shadows: (
+  md: 0 8px 20px rgba(0, 0, 0, 0.08)
+);
+
+// ==============================================
+// HELPERS -> Funciones que consultan los mapas
+// ==============================================
+
+@function color($key) {
+  @return map.get($colors, $key);
+}
+
+@function radius($key) {
+  @return map.get($radii, $key);
+}
+
+@function shadow($key) {
+  @return map.get($shadows, $key);
+}

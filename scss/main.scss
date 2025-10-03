@@ -1,0 +1,7 @@
+// Punto de entrada: importa módulos ya configurados
+@use "variables" as vars;
+@use "mixins" as mix;
+@use "base";
+@use "layout";
+@use "components";
+@use "utilities";

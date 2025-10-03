@@ -1,0 +1,33 @@
+// ==============================================
+// MIXINS + PLACEHOLDERS
+// Media queries, superficies reutilizables, botones, etc.
+// ==============================================
+@use "variables" as vars;
+
+// Breakpoints rápidos
+@mixin up($px)   { @media (min-width: $px) { @content; } }
+@mixin down($px) { @media (max-width: $px) { @content; } }
+
+// Superficie (para usar con @extend)
+%surface {
+  border-radius: vars.radius(md);
+  box-shadow: vars.shadow(md);
+  background: vars.color(bg-1);
+}
+
+// Versión mixin (si prefieres incluir en lugar de extender)
+@mixin surface() {
+  border-radius: vars.radius(md);
+  box-shadow: vars.shadow(md);
+  background: vars.color(bg-1);
+}
+
+// Botón base (ejemplo de mixin con parámetros)
+@mixin button($bg, $fg: #fff) {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .6rem 1rem; border: 0; border-radius: vars.radius(md);
+  background: $bg; color: $fg; font-weight: 700; cursor: pointer;
+  transition: filter .2s ease, transform .06s ease;
+  &:hover  { filter: brightness(1.03); }
+  &:active { transform: translateY(1px); }
+}

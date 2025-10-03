@@ -1,0 +1,314 @@
+@use "variables" as vars;
+@use "mixins" as mix;
+
+// ==============================================
+// COMPONENTES (hero, banner, comunicados, especialidades,
+// páginas: nosotros, servicios, contacto, footer)
+// Usa nesting + @extend %surface (definido en _mixins.scss)
+// ==============================================
+
+// ---- Hero / Portada
+.hero {
+  padding-block: 1.5rem;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+
+    @include mix.down(992px) { grid-template-columns: 1fr; }
+  }
+
+  &__copy {
+    h1 {
+      font-size: clamp(1.3rem, 2vw + 1rem, 1.8rem);
+      margin: 0 0 1rem;
+    }
+    p  {
+      max-width: 58ch;
+      font-size: clamp(.95rem, 1vw + .6rem, 1.05rem);
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  .carousel-inner { border-radius: vars.radius(md); box-shadow: vars.shadow(md); }
+
+  #carouselPortada {
+    .carousel-item img {
+      height: 220px;
+      object-fit: cover;
+      border-radius: vars.radius(md);
+
+      @include mix.up(768px)  { height: 300px;  }
+      @include mix.up(1200px) { height: 380px;  }
+    }
+  }
+}
+
+// ---- Banner con tarjeta superpuesta
+.banner {
+  background: transparent;
+  padding-block: 2rem;
+
+  &__wrap { position: relative; }
+
+  .banner-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: vars.radius(md);
+
+    @include mix.up(768px){ height: 320px; }
+    @include mix.up(992px){ height: 360px; }
+  }
+
+  &__wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: vars.radius(md);
+    background: linear-gradient(180deg, rgba(250,177,83,.22), rgba(240,156,31,.05) 55%, rgba(0,0,0,0));
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .banner-card {
+    @extend %surface; // definido en _mixins.scss
+    position: absolute;
+    bottom: .9rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 2;
+    max-width: 520px;
+    background: rgba(255,255,255,.94);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 1rem 1.25rem;
+
+    h2 {
+      margin: 0 0 .8rem;
+      line-height: 1.25;
+      font-weight: 700;
+      color: #003366;
+      font-size: clamp(1.15rem, 1.6vw + .7rem, 1.6rem);
+    }
+    p {
+      margin: 0;
+      line-height: 1.6;
+      max-width: 62ch;
+      font-size: clamp(.92rem, 1vw + .45rem, 1rem);
+    }
+  }
+
+  @include mix.up(992px){ .banner-card { left: 1.25rem; right: auto; } }
+}
+
+// ---- Comunicados + Video
+.com__lista { display: grid; gap: 1rem; }
+
+.com-card {
+  @extend %surface;
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: .75rem;
+  align-items: center;
+  padding: .6rem;
+
+  &__img img {
+    width: 100%;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .muted { color: vars.color(ink-2); }
+  &__body .small { font-size: .9rem; }
+}
+
+// ---- Video 16:9
+.video16x9 {
+  aspect-ratio: 16/9;
+  border-radius: vars.radius(md);
+  overflow: hidden;
+  box-shadow: vars.shadow(md);
+  background: #000;
+
+  iframe { width: 100%; height: 100%; border: 0; }
+}
+
+// ---- Especialidades
+.spec-card {
+  @extend %surface;
+  position: relative;
+  overflow: hidden;
+  border: 0;
+
+  img { height: 220px; object-fit: cover; width: 100%; }
+
+  .spec-label {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    background: vars.color(brand-1); color: #fff; text-align: center;
+    padding: .6rem .8rem; font-weight: 700; font-size: .95rem;
+  }
+}
+
+// ========= NOSOTROS =========
+.hero-nosotros {
+  background: vars.color(bg-2);
+  padding-block: 1.25rem 1.75rem;
+
+  .h2 { margin: 0 0 .5rem; }
+  .lead { max-width: 75ch; margin: 0; }
+}
+
+main .container { padding-block: 1.25rem 2rem; }
+.panel.destacado { margin-bottom: 1rem; }
+
+.grid-3 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+
+  @include mix.up(992px){
+    grid-template-columns: 280px 1fr 300px;
+    gap: 1.25rem;
+  }
+}
+
+.card-info {
+  @extend %surface;
+  padding: .9rem 1rem;
+
+  h3 { margin: 0 0 .4rem; font-weight: 700; color: vars.color(ink-1); }
+  p  { margin: 0; line-height: 1.6; }
+}
+
+.list-institucional {
+  margin: .25rem 0 0;
+  padding-left: 1.1rem;
+
+  li { margin: .35rem 0; line-height: 1.55; }
+  strong { color: vars.color(ink-1); }
+}
+
+.docentes {
+  padding-block: 1.25rem 2rem;
+  .h3 { margin: 0 0 .9rem; }
+}
+
+.docente-card {
+  @extend %surface;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  img { width: 100%; height: 220px; object-fit: cover; }
+  .card-body { padding: .75rem .9rem 1rem; }
+  .h6 { margin: 0 0 .25rem; font-weight: 700; color: vars.color(ink-1); }
+  .small { color: vars.color(ink-2); }
+}
+
+// ========= SERVICIOS =========
+.sectionyo1 {
+  padding: 2rem 0;
+
+  .texto1 {
+    h1 { font-size: clamp(1.4rem, 1.8vw + 1rem, 2rem); margin: 0 0 .75rem; color: #003366; }
+    p  { line-height: 1.7; color: vars.color(ink-2); }
+  }
+
+  .miimagen1 img { width: 100%; max-width: 520px; margin-inline: auto; }
+}
+
+.sectionyo { padding: 1rem 0 2rem; }
+
+.cuadrados1 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+
+  @include mix.up(768px){ grid-template-columns: repeat(4, minmax(0,1fr)); }
+
+  > div {
+    @extend %surface;
+    padding: 1rem;
+    text-align: center;
+    transition: transform .15s ease;
+
+    &:hover { transform: translateY(-3px); }
+  }
+
+  img { width: 56px; height: 56px; object-fit: contain; margin: 0 auto .5rem; }
+  p   { margin: 0; font-weight: 600; }
+}
+
+.normas1, .certificaciones, .solicitud-certificacion, .importancia-certificacion {
+  padding: 1rem 0; max-width: 80ch; margin-inline: auto;
+
+  ul { padding-left: 1.2rem; }
+}
+.solicitud-certificacion ol { padding-left: 1.2rem; }
+
+// ========= CONTACTO =========
+.page-head {
+  padding-block: 1.25rem;
+  .h3 { margin: 0; }
+}
+
+.contacto {
+  padding-block: 1.25rem 2.25rem;
+
+  &__grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    align-items: start;
+
+    @include mix.up(768px){ gap: 1.25rem; }
+    @include mix.up(992px){ grid-template-columns: .9fr 1.1fr; gap: 1.5rem; }
+  }
+
+  .form-label { font-weight: 600; color: #003366; }
+}
+
+.panel {
+  @extend %surface;
+  padding: 1rem 1.25rem;
+
+  + .panel { margin-top: 1rem; @include mix.up(992px){ margin-top: 0; } }
+  .text-end { text-align: right; }
+}
+
+.panel-title {
+  margin: 0 0 .75rem;
+  font-weight: 700;
+  color: #003366;
+  font-size: clamp(1.05rem, .4vw + 1rem, 1.25rem);
+}
+
+.info {
+  p { display: flex; align-items: center; gap: .55rem; margin: .35rem 0; }
+  i { width: 1.2em; text-align: center; }
+  a { text-decoration: none; }
+}
+
+// ========= FOOTER =========
+.site-footer {
+  background: vars.color(bg-2);
+  padding-block: 24px;
+
+  a { color: vars.color(ink-1); }
+
+  .footer-logo-big { max-height: 200px; width: auto; object-fit: contain; }
+
+  .footer__inner {
+    display: grid; gap: 1rem; align-items: start;
+    grid-template-columns: 1.2fr 1fr 1fr;
+
+    @include mix.down(992px){ grid-template-columns: 1fr; }
+  }
+
+  .footer__col img { max-width: 100%; height: auto; }
+  .copy { color: vars.color(ink-2); font-size: .9rem; text-align: center; }
+}

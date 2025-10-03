@@ -1,0 +1,26 @@
+@use "variables" as vars; // importa tokens como globales
+@use "mixins" as *;
+
+// ==============================================
+// BASE / RESET / TIPOGRAFÍA / CONTENEDORES
+// ==============================================
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+
+body {
+  background: vars.color(bg-1);
+  color: vars.color(ink-1);
+}
+
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { display: block; max-width: 100%; height: auto; }
+.text-justify { text-align: justify; }
+
+/* Contenedores fluidos con ancho máximo */
+.container     { width: min(1200px, 92%); margin-inline: auto; }
+.container-xxl { width: min(1320px, 92%); margin-inline: auto; }
