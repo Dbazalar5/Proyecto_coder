@@ -25,7 +25,7 @@
       font-size: clamp(1.3rem, 2vw + 1rem, 1.8rem);
       margin: 0 0 1rem;
     }
-    p  {
+    p {
       max-width: 58ch;
       font-size: clamp(.95rem, 1vw + .6rem, 1.05rem);
       line-height: 1.6;
@@ -33,7 +33,10 @@
     }
   }
 
-  .carousel-inner { border-radius: vars.radius(md); box-shadow: vars.shadow(md); }
+  .carousel-inner {
+    border-radius: vars.radius(md);
+    box-shadow: vars.shadow(md);
+  }
 
   #carouselPortada {
     .carousel-item img {
@@ -41,8 +44,8 @@
       object-fit: cover;
       border-radius: vars.radius(md);
 
-      @include mix.up(768px)  { height: 300px;  }
-      @include mix.up(1200px) { height: 380px;  }
+      @include mix.up(768px)  { height: 300px; }
+      @include mix.up(1200px) { height: 380px; }
     }
   }
 }
@@ -69,13 +72,18 @@
     position: absolute;
     inset: 0;
     border-radius: vars.radius(md);
-    background: linear-gradient(180deg, rgba(250,177,83,.22), rgba(240,156,31,.05) 55%, rgba(0,0,0,0));
+    background: linear-gradient(
+      180deg,
+      rgba(250,177,83,.22),
+      rgba(240,156,31,.05) 55%,
+      rgba(0,0,0,0)
+    );
     pointer-events: none;
     z-index: 1;
   }
 
   .banner-card {
-    @extend %surface; // definido en _mixins.scss
+    @extend %surface; 
     position: absolute;
     bottom: .9rem;
     left: 1rem;
@@ -148,8 +156,12 @@
 
   .spec-label {
     position: absolute; left: 0; right: 0; bottom: 0;
-    background: vars.color(brand-1); color: #fff; text-align: center;
-    padding: .6rem .8rem; font-weight: 700; font-size: .95rem;
+    background: vars.color(brand-1);
+    color: #fff;
+    text-align: center;
+    padding: .6rem .8rem;
+    font-weight: 700;
+    font-size: .95rem;
   }
 }
 
@@ -211,10 +223,14 @@ main .container { padding-block: 1.25rem 2rem; }
 
 // ========= SERVICIOS =========
 .sectionyo1 {
-  padding: 2rem 0;
+  padding: 1rem 0 2rem; // antes 2rem 0, ahora más compacto
 
   .texto1 {
-    h1 { font-size: clamp(1.4rem, 1.8vw + 1rem, 2rem); margin: 0 0 .75rem; color: #003366; }
+    h1 {
+      font-size: clamp(1.4rem, 1.8vw + 1rem, 2rem);
+      margin: 0 0 .75rem;
+      color: #003366;
+    }
     p  { line-height: 1.7; color: vars.color(ink-2); }
   }
 
@@ -250,12 +266,21 @@ main .container { padding-block: 1.25rem 2rem; }
 }
 .solicitud-certificacion ol { padding-left: 1.2rem; }
 
-// ========= CONTACTO =========
+// ========= CABECERA DE PÁGINA =========
 .page-head {
-  padding-block: 1.25rem;
-  .h3 { margin: 0; }
+  padding-block: .25rem .5rem; // más compacto
+
+  .h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: inherit; // no forzar azul
+  }
 }
 
+.page-head + .sectionyo1 { margin-top: .25rem; }
+
+// ========= CONTACTO =========
 .contacto {
   padding-block: 1.25rem 2.25rem;
 
