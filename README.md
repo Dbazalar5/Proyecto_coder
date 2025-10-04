@@ -4,22 +4,6 @@ Este proyecto corresponde a la **Tercera Pre-Entrega** del curso de **Desarrollo
 Se trabajó en la creación de un sitio web responsive utilizando **HTML5, SCSS (Sass), CSS avanzado y Bootstrap**, con una correcta implementación de Node y control de versiones en GitHub.
 
 ---
-
-## 📋 Consigna
-- El proyecto debe estar totalmente estructurado con **5 páginas HTML**.
-- Implementar **SCSS (Sass)** con:
-  - Nesting
-  - Partials
-  - Mixins
-  - Extends
-  - Variables
-  - Listas y loops
-- Aplicar **estilos avanzados** y **estructura semántica correcta**.
-- Subir el proyecto a **GitHub** y publicarlo en **GitHub Pages**.
-- No subir la carpeta `node_modules`.
-
----
-
 ## 🚀 Tecnologías utilizadas
 - **HTML5**
 - **SCSS (Sass)**
