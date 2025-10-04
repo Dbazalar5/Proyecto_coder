@@ -6,7 +6,7 @@
 // Importa módulo oficial de Sass para manejar mapas
 @use "sass:map";
 
-// Paleta de colores como MAP (más flexible que variables sueltas)
+// Paleta de colores como MAP
 $colors: (
   brand-1: #023048, // azul principal
   brand-2: #F5B639, // amarillo/acento
