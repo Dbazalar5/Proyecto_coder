@@ -4,10 +4,10 @@
 
 // ==============================================
 // UTILIDADES: helpers y utilidades generadas con listas
-// Usa list.length / list.nth (evita deprecations)
+// list.length / list.nth (evita deprecations)
 // ==============================================
 
-// Lista de espaciados (puedes agregar más valores si quieres)
+// Lista de espaciados
 $spacers: 0, .25rem, .5rem, .75rem, 1rem, 1.25rem, 1.5rem, 2rem;
 
 // Genera clases utilitarias basadas en $spacers:
