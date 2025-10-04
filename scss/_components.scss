@@ -337,3 +337,48 @@ main .container { padding-block: 1.25rem 2rem; }
   .footer__col img { max-width: 100%; height: auto; }
   .copy { color: vars.color(ink-2); font-size: .9rem; text-align: center; }
 }
+
+
+
+// ========= NOTICIAS / EVENTOS / GALERÍA =========
+.noticias, .eventos, .galeria {
+  margin-block: 1.25rem 2rem;
+
+  h2 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: vars.color(brand-1);
+  }
+}
+
+.noticias {
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+  .card-info { // reutiliza tu superficie
+    @extend %surface;
+    p { margin: 0; }
+  }
+}
+
+.eventos {
+  .list-institucional {
+    @extend %surface;
+  }
+}
+
+.galeria {
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+
+    img {
+      width: 100%;
+      border-radius: vars.radius(md);
+      box-shadow: vars.shadow(md);
+    }
+  }
+}

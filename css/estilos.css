@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.banner .banner-card, .com-card, .spec-card, .card-info, .docente-card, .cuadrados1 > div, .panel {
+.banner .banner-card, .com-card, .spec-card, .card-info, .docente-card, .cuadrados1 > div, .panel, .noticias .card-info, .eventos .list-institucional {
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   background: #ffffff;
@@ -585,6 +585,35 @@ main .container {
   color: #4a5568;
   font-size: 0.9rem;
   text-align: center;
+}
+
+.noticias, .eventos, .galeria {
+  margin-block: 1.25rem 2rem;
+}
+.noticias h2, .eventos h2, .galeria h2 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #023048;
+}
+
+.noticias .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.noticias .card-info p {
+  margin: 0;
+}
+
+.galeria .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.galeria .gallery-grid img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .mt-1 {
