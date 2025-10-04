@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Noticias y Eventos – Politécnico</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noticias | POLITÉCNICO</title>
 
-  <!-- Bootstrap (solo si ya lo usas) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
 
-  <!-- Fuente + CSS propio -->
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../css/estilos.css"/>
-</head>
-<body>
 
-  <!-- Topbar + navbar (igual que tus otras páginas) -->
+  <!-- Favicon -->
+  <link rel="icon" href="https://www.poli.edu.pe/wp-content/uploads/2021/08/cropped-INSIGNIA-POLITECNICO-32x32.png" sizes="32x32"/>
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+
+<body>
+  <!-- Topbar -->
   <section class="topbar">
     <div class="container topbar__inner">
       <ul class="topbar__list">
         <li><i class="fa-solid fa-phone-flip"></i> <a href="tel:+51321126">+51 321 126</a></li>
         <li><i class="fa-regular fa-envelope"></i> <a href="mailto:informes@poli.edu.pe">informes@poli.edu.pe</a></li>
       </ul>
-      <span class="topbar__addr"><i class="fa-solid fa-location-dot"></i> Av. Circunvalación Oeste 298 – Juliaca</span>
+      <span class="topbar__addr">
+        <i class="fa-solid fa-location-dot"></i> Av. Circunvalación Oeste 298 – Urb. Santa María – Juliaca
+      </span>
     </div>
   </section>
 
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <img src="../imagenes/logo.png" alt="Politécnico - Logo" class="brand-logo" />
+      <p class="lema">Un Politecniano Ejemplo de Disciplina, Cultura y Tecnología.</p>
+    </div>
+  </header>
+
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg nav-main">
     <div class="container">
       <a class="navbar-brand text-white fw-semibold" href="../index.html">POLITÉCNICO</a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto gap-lg-4">
@@ -39,80 +60,103 @@
           <li class="nav-item"><a class="nav-link text-white" href="./nosotros.html">Nosotros</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="./servicios.html">Servicios</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="./contacto.html">Contacto</a></li>
-          <li class="nav-item"><a class="nav-link text-white active" href="./noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link text-white active" aria-current="page" href="./noticias.html">Noticias</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-- Contenido principal -->
   <main>
-    <!-- Cabecera de página -->
     <section class="page-head">
       <div class="container">
-        <h1 class="h3">Noticias, Eventos y Galería</h1>
-        <p class="lead">Lo que estamos haciendo en el Politécnico.</p>
+        <h1 class="h3">Noticias y Eventos</h1>
       </div>
     </section>
 
-    <!-- Noticias (cards) -->
-    <section class="container noticias">
-      <h2 class="h4">Últimas noticias</h2>
-      <div class="cards-grid">
-        <article class="card-info">
-          <h3>Convenio con Google for Education</h3>
-          <p>Firmamos un convenio para potenciar herramientas digitales en el aula.</p>
-        </article>
-        <article class="card-info">
-          <h3>Nuevos talleres 2025</h3>
-          <p>Robótica, programación y emprendimiento se suman a la oferta.</p>
-        </article>
-        <article class="card-info">
-          <h3>Feria de Proyectos</h3>
-          <p>Estudiantes presentaron soluciones innovadoras para su comunidad.</p>
-        </article>
-      </div>
-    </section>
+    <section class="comunicados">
+      <div class="container">
+        <div class="grid-2">
+          <!-- Lista de comunicados -->
+          <div class="com__lista">
+            <article class="com-card">
+              <div class="com-card__img">
+                <img src="https://www.poli.edu.pe/wp-content/uploads/2021/09/COMUNICADOLOGO-2-150x100.jpg" alt="Comunicado">
+              </div>
+              <div class="com-card__body">
+                <h3 class="h6">Inicio del Año Escolar 2025</h3>
+                <small class="muted">10 de marzo de 2025</small>
+                <p class="small">El Politécnico dio inicio oficial al año académico con la presencia de estudiantes, docentes y autoridades locales.</p>
+              </div>
+            </article>
 
-    <!-- Agenda de eventos -->
-    <section class="container eventos">
-      <h2 class="h4">Agenda</h2>
-      <ul class="list-institucional">
-        <li><strong>15 Oct</strong>: Feria de Innovación Tecnológica</li>
-        <li><strong>22 Oct</strong>: Concurso de Matemáticas</li>
-        <li><strong>30 Oct</strong>: Festival Cultural</li>
-      </ul>
-    </section>
+            <article class="com-card">
+              <div class="com-card__img">
+                <img src="../imagenes/img2.png" alt="Evento deportivo">
+              </div>
+              <div class="com-card__body">
+                <h3 class="h6">Olimpiadas Politecnianas</h3>
+                <small class="muted">22 de abril de 2025</small>
+                <p class="small">Se desarrollaron las olimpiadas internas donde participaron todas las especialidades en diversas disciplinas deportivas.</p>
+              </div>
+            </article>
 
-    <!-- Galería -->
-    <section class="container galeria">
-      <h2 class="h4">Galería</h2>
-      <div class="grid-3 gallery-grid">
-        <img src="../imagenes/img1.png" alt="Evento 1">
-        <img src="../imagenes/img2.png" alt="Evento 2">
-        <img src="../imagenes/img3.png" alt="Evento 3">
+            <article class="com-card">
+              <div class="com-card__img">
+                <img src="../imagenes/img3.png" alt="Evento cultural">
+              </div>
+              <div class="com-card__body">
+                <h3 class="h6">Festival Cultural 2025</h3>
+                <small class="muted">30 de mayo de 2025</small>
+                <p class="small">Celebramos nuestras raíces culturales con danzas, música y exposiciones artísticas de nuestros estudiantes.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Video / Galería -->
+          <div>
+            <h2 class="h4">Galería Institucional</h2>
+            <div class="video16x9">
+              <iframe src="https://www.youtube.com/embed/Gcywm2pD3ac"
+                      title="Video institucional del Politécnico"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer__inner">
       <div class="footer__col">
         <p class="mb-1"><a href="tel:+51321126" class="fw-semibold">(01) 321 126</a></p>
         <p class="mb-2"><a href="mailto:informes@poli.edu.pe">informes@poli.edu.pe</a></p>
-        <p class="mb-0 small text-justify">© 2025 Politécnico Regional Los Andes.</p>
+        <p class="mb-0 small text-justify">
+          La Institución Educativa Secundaria Pública “Politécnico Regional Los Andes” de Juliaca se creó el 15 de mayo de 1928
+          por Resolución Suprema N° 569...
+        </p>
       </div>
       <div class="footer__col">
         <h3 class="h6">CONTROL</h3>
         <img src="../imagenes/logos/logo-minedu.png" alt="Logo MINEDU" />
+        <h3 class="h6 mt-3">AFILIADOS</h3>
+        <img src="../imagenes/logos/logo-Dreppng-removebg-preview.png" alt="Logo DREP" />
       </div>
       <div class="footer__col">
-        <h3 class="h6">ALIANZA</h3>
-        <img src="../imagenes/logos/499752886_989433863349608_5351641011497920617_n-removebg-preview.png" class="footer-logo-big" alt="Logo aliado" />
+        <h3 class="h6">ALIANZA CON</h3>
+        <img src="../imagenes/logos/499752886_989433863349608_5351641011497920617_n-removebg-preview.png"
+             class="footer-logo-big" alt="Logo aliado" />
       </div>
     </div>
-    <p class="copy">Todos los derechos reservados.</p>
+    <p class="copy">© 2025 Politécnico Regional Los Andes. Todos los derechos reservados.</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"></script>
 </body>
 </html>
