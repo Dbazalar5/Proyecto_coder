@@ -1,29 +1,12 @@
 <!DOCTYPE html>
 <html lang="es-PE">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Noticias y Eventos – Politécnico</title>
 
-  <title>Noticias y eventos | Politécnico Regional Los Andes – Juliaca</title>
-  <meta name="description" content="Entérate de las últimas noticias y eventos del Politécnico Regional Los Andes de Juliaca: inicio de clases, olimpiadas, festivales y más." />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <link rel="canonical" href="https://politechcoder.netlify.app/pages/noticias.html" />
-  <meta name="theme-color" content="#0b3d91" />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_PE" />
-  <meta property="og:site_name" content="Politécnico Regional Los Andes" />
-  <meta property="og:title" content="Noticias y eventos | Politécnico Regional Los Andes – Juliaca" />
-  <meta property="og:description" content="Últimas noticias y eventos institucionales del Politécnico de Juliaca." />
-  <meta property="og:url" content="https://politechcoder.netlify.app/pages/noticias.html" />
-  <meta property="og:image" content="https://politechcoder.netlify.app/imagenes/img3.webp" />
-  <meta property="og:image:alt" content="Estudiantes del Politécnico Regional Los Andes en actividades institucionales" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+  <!-- Bootstrap (solo si ya lo usas) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
 
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
@@ -41,37 +24,23 @@
 </head>
 
 <body>
-  <!-- Skip link -->
-  <a class="visually-hidden-focusable" href="#contenido">Saltar al contenido</a>
 
-  <!-- Topbar -->
+  <!-- Topbar + navbar (igual que tus otras páginas) -->
   <section class="topbar">
     <div class="container topbar__inner">
       <ul class="topbar__list" aria-label="Datos de contacto">
         <li><i class="fa-solid fa-phone-flip" aria-hidden="true"></i> <a href="tel:+51321126">+51 321 126</a></li>
         <li><i class="fa-regular fa-envelope" aria-hidden="true"></i> <a href="mailto:informes@poli.edu.pe">informes@poli.edu.pe</a></li>
       </ul>
-      <span class="topbar__addr">
-        <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Av. Circunvalación Oeste 298 – Urb. Santa María – Juliaca
-      </span>
+      <span class="topbar__addr"><i class="fa-solid fa-location-dot"></i> Av. Circunvalación Oeste 298 – Juliaca</span>
     </div>
   </section>
 
-  <!-- Header -->
-  <header class="site-header" role="banner">
-    <div class="container header__inner">
-      <img src="../imagenes/logo.webp" alt="Politécnico Regional Los Andes - Logotipo" class="brand-logo" decoding="async" />
-      <p class="lema">Un Politecniano Ejemplo de Disciplina, Cultura y Tecnología.</p>
-    </div>
-  </header>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg nav-main" aria-label="Navegación principal">
+  <nav class="navbar navbar-expand-lg nav-main">
     <div class="container">
-      <a class="navbar-brand text-white fw-semibold" href="../index.html" aria-label="Inicio del sitio">POLITÉCNICO</a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-              aria-controls="mainNav" aria-expanded="false" aria-label="Menú">
-        <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
+      <a class="navbar-brand text-white fw-semibold" href="../index.html">POLITÉCNICO</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto gap-lg-4">
@@ -85,86 +54,56 @@
     </div>
   </nav>
 
-  <!-- Contenido principal -->
-  <main id="contenido">
+  <main>
+    <!-- Cabecera de página -->
     <section class="page-head">
       <div class="container">
-        <h1 class="h3">Noticias y Eventos</h1>
-        <p class="muted">Comunicados, actividades y logros de nuestra comunidad educativa.</p>
+        <h1 class="h3">Noticias, Eventos y Galería</h1>
+        <p class="lead">Lo que estamos haciendo en el Politécnico.</p>
       </div>
     </section>
 
-    <section class="comunicados">
-      <div class="container">
-        <div class="grid-2">
-          <!-- Lista de comunicados -->
-          <div class="com__lista">
-            <!-- Artículo 1 -->
-            <article class="com-card" itemscope itemtype="https://schema.org/NewsArticle">
-              <div class="com-card__img">
-                <img src="https://www.poli.edu.pe/wp-content/uploads/2021/09/COMUNICADOLOGO-2-150x100.jpg"
-                     alt="Comunicado del Politécnico" loading="lazy" decoding="async">
-              </div>
-              <div class="com-card__body">
-                <h3 class="h6" itemprop="headline">Inicio del Año Escolar 2025</h3>
-                <small class="muted" itemprop="datePublished" content="2025-03-10">10 de marzo de 2025</small>
-                <p class="small" itemprop="description">
-                  El Politécnico dio inicio oficial al año académico con la presencia de estudiantes, docentes y autoridades locales.
-                </p>
-              </div>
-            </article>
+    <!-- Noticias (cards) -->
+    <section class="container noticias">
+      <h2 class="h4">Últimas noticias</h2>
+      <div class="cards-grid">
+        <article class="card-info">
+          <h3>Convenio con Google for Education</h3>
+          <p>Firmamos un convenio para potenciar herramientas digitales en el aula.</p>
+        </article>
+        <article class="card-info">
+          <h3>Nuevos talleres 2025</h3>
+          <p>Robótica, programación y emprendimiento se suman a la oferta.</p>
+        </article>
+        <article class="card-info">
+          <h3>Feria de Proyectos</h3>
+          <p>Estudiantes presentaron soluciones innovadoras para su comunidad.</p>
+        </article>
+      </div>
+    </section>
 
-            <!-- Artículo 2 -->
-            <article class="com-card" itemscope itemtype="https://schema.org/NewsArticle">
-              <div class="com-card__img">
-                <img src="../imagenes/img2.webp" alt="Olimpiadas Politecnianas" loading="lazy" decoding="async">
-              </div>
-              <div class="com-card__body">
-                <h3 class="h6" itemprop="headline">Olimpiadas Politecnianas</h3>
-                <small class="muted" itemprop="datePublished" content="2025-04-22">22 de abril de 2025</small>
-                <p class="small" itemprop="description">
-                  Se desarrollaron las olimpiadas internas con la participación de todas las especialidades en diversas disciplinas deportivas.
-                </p>
-              </div>
-            </article>
+    <!-- Agenda de eventos -->
+    <section class="container eventos">
+      <h2 class="h4">Agenda</h2>
+      <ul class="list-institucional">
+        <li><strong>15 Oct</strong>: Feria de Innovación Tecnológica</li>
+        <li><strong>22 Oct</strong>: Concurso de Matemáticas</li>
+        <li><strong>30 Oct</strong>: Festival Cultural</li>
+      </ul>
+    </section>
 
-            <!-- Artículo 3 -->
-            <article class="com-card" itemscope itemtype="https://schema.org/NewsArticle">
-              <div class="com-card__img">
-                <img src="../imagenes/img3.webp" alt="Festival Cultural 2025" loading="lazy" decoding="async">
-              </div>
-              <div class="com-card__body">
-                <h3 class="h6" itemprop="headline">Festival Cultural 2025</h3>
-                <small class="muted" itemprop="datePublished" content="2025-05-30">30 de mayo de 2025</small>
-                <p class="small" itemprop="description">
-                  Celebramos nuestras raíces culturales con danzas, música y exposiciones artísticas de nuestros estudiantes.
-                </p>
-              </div>
-            </article>
-          </div>
-
-          <!-- Video / Galería -->
-          <div>
-            <h2 class="h4">Galería institucional</h2>
-            <div class="video16x9">
-              <iframe
-                  src="https://www.youtube-nocookie.com/embed/oirRU5DQrhY"
-                  title="Video de actividades del Politécnico"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                  referrerpolicy="strict-origin-when-cross-origin">
-              </iframe>
-            </div>
-            <noscript><p>Activa JavaScript para ver el video de la galería.</p></noscript>
-          </div>
-        </div>
+    <!-- Galería -->
+    <section class="container galeria">
+      <h2 class="h4">Galería</h2>
+      <div class="grid-3 gallery-grid">
+        <img src="../imagenes/img1.png" alt="Evento 1">
+        <img src="../imagenes/img2.png" alt="Evento 2">
+        <img src="../imagenes/img3.png" alt="Evento 3">
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="container footer__inner">
       <div class="footer__col">
         <p class="mb-1"><a href="tel:+51321126" class="fw-semibold" aria-label="Llamar al Politécnico">(01) 321 126</a></p>
@@ -176,14 +115,11 @@
       </div>
       <div class="footer__col">
         <h3 class="h6">CONTROL</h3>
-        <img src="../imagenes/logos/logo-minedu.webp" alt="Logo MINEDU" loading="lazy" decoding="async" />
-        <h3 class="h6 mt-3">AFILIADOS</h3>
-        <img src="../imagenes/logos/logo-Dreppng-removebg-preview.webp" alt="Logo DREP" loading="lazy" decoding="async" />
+        <img src="../imagenes/logos/logo-minedu.png" alt="Logo MINEDU" />
       </div>
       <div class="footer__col">
-        <h3 class="h6">ALIANZA CON</h3>
-        <img src="../imagenes/logos/499752886_989433863349608_5351641011497920617_n-removebg-preview.webp"
-             class="footer-logo-big" alt="Logo aliado" loading="lazy" decoding="async" />
+        <h3 class="h6">ALIANZA</h3>
+        <img src="../imagenes/logos/499752886_989433863349608_5351641011497920617_n-removebg-preview.png" class="footer-logo-big" alt="Logo aliado" />
       </div>
     </div>
     <p class="copy">© 2025 Politécnico Regional Los Andes. Todos los derechos reservados.</p>
