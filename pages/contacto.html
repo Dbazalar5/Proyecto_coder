@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PE">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacto – POLITÉCNICO</title>
 
-  <!-- Bootstrap CSS (navbar + formulario) -->
+  <title>Contacto | Politécnico Regional Los Andes – Juliaca</title>
+  <meta name="description" content="Escríbenos para admisiones, consultas y soporte. Encuéntranos en Av. Circunvalación Oeste 298 – Juliaca o al (01) 321 126." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://politechcoder.netlify.app/pages/contacto.html" />
+  <meta name="theme-color" content="#0b3d91" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_PE" />
+  <meta property="og:site_name" content="Politécnico Regional Los Andes" />
+  <meta property="og:title" content="Contacto | Politécnico Regional Los Andes – Juliaca" />
+  <meta property="og:description" content="Escríbenos para admisiones, consultas y soporte. Dirección en Juliaca y teléfonos de contacto." />
+  <meta property="og:url" content="https://politechcoder.netlify.app/pages/contacto.html" />
+  <meta property="og:image" content="https://politechcoder.netlify.app/imagenes/img3.webp" />
+  <meta property="og:image:alt" content="Fachada y estudiantes del Politécnico Regional Los Andes" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
 
-  <!-- Font Awesome (CSS) -->
+  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
 
   <!-- Google Font -->
@@ -25,32 +41,34 @@
 </head>
 
 <body>
+  <!-- Enlace de salto -->
+  <a class="visually-hidden-focusable" href="#contenido">Saltar al contenido</a>
 
   <!-- Topbar -->
   <section class="topbar">
     <div class="container topbar__inner">
-      <ul class="topbar__list">
-        <li><i class="fa-solid fa-phone-flip"></i> <a href="tel:+51321126">+51 321 126</a></li>
-        <li><i class="fa-regular fa-envelope"></i> <a href="mailto:informes@poli.edu.pe">informes@poli.edu.pe</a></li>
+      <ul class="topbar__list" aria-label="Datos de contacto">
+        <li><i class="fa-solid fa-phone-flip" aria-hidden="true"></i> <a href="tel:+51321126">+51 321 126</a></li>
+        <li><i class="fa-regular fa-envelope" aria-hidden="true"></i> <a href="mailto:informes@poli.edu.pe">informes@poli.edu.pe</a></li>
       </ul>
       <span class="topbar__addr">
-        <i class="fa-solid fa-location-dot"></i> Av. Circunvalación Oeste 298 – Urb. Santa María – Juliaca
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Av. Circunvalación Oeste 298 – Urb. Santa María – Juliaca
       </span>
     </div>
   </section>
 
   <!-- Header -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container header__inner">
-      <img src="../imagenes/logo.png" alt="Politécnico - Logo" class="brand-logo" />
+      <img src="../imagenes/logo.webp" alt="Politécnico Regional Los Andes - Logotipo" class="brand-logo" decoding="async" />
       <p class="lema">Un Politecniano Ejemplo de Disciplina, Cultura y Tecnología.</p>
     </div>
   </header>
 
-  <!-- Navbar (Bootstrap) -->
-  <nav class="navbar navbar-expand-lg nav-main">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg nav-main" aria-label="Navegación principal">
     <div class="container">
-      <a class="navbar-brand text-white fw-semibold" href="../index.html">POLITÉCNICO</a>
+      <a class="navbar-brand text-white fw-semibold" href="../index.html" aria-label="Inicio del sitio">POLITÉCNICO</a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
               aria-controls="mainNav" aria-expanded="false" aria-label="Menú">
         <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
@@ -61,18 +79,19 @@
           <li class="nav-item"><a class="nav-link text-white" href="nosotros.html">Nosotros</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="servicios.html">Servicios</a></li>
           <li class="nav-item"><a class="nav-link text-white active" aria-current="page" href="contacto.html">Contacto</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="../pages/noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="noticias.html">Noticias</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Contenido principal -->
-  <main>
+  <main id="contenido">
     <!-- Encabezado de página -->
     <section class="page-head">
       <div class="container">
         <h1 class="h3">Contacto</h1>
+        <p class="muted">Envíanos tu consulta y te responderemos a la brevedad.</p>
       </div>
     </section>
 
@@ -83,40 +102,44 @@
         <!-- Información de contacto -->
         <aside class="panel info">
           <h2 class="panel-title">Información de contacto</h2>
-          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:contacto@poli.edu.pe">contacto@poli.edu.pe</a></p>
-          <p><i class="fa-solid fa-location-dot"></i> Av. Circunvalación Oeste 298 – Juliaca</p>
-          <p><i class="fa-solid fa-phone"></i> <a href="tel:+51321126">(01) 321 126</a></p>
-          <p><i class="fa-solid fa-phone"></i> <a href="tel:+51321127">(01) 321 127</a></p>
+          <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:contacto@poli.edu.pe">contacto@poli.edu.pe</a></p>
+          <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Av. Circunvalación Oeste 298 – Juliaca</p>
+          <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+51321126">(01) 321 126</a></p>
+          <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+51321127">(01) 321 127</a></p>
 
-          <div class="redes">
-            <a class="btn-icon" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a class="btn-icon" href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-            <a class="btn-icon" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <div class="redes" aria-label="Redes sociales">
+            <a class="btn-icon" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a class="btn-icon" href="#" aria-label="Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+            <a class="btn-icon" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
           </div>
         </aside>
 
-        <!-- Formulario (Bootstrap) -->
-        <section class="panel">
-          <h2 class="panel-title">Escríbenos</h2>
-          <form action="#" method="post" novalidate autocomplete="off" class="row g-3">
+        <!-- Formulario -->
+        <section class="panel" aria-labelledby="form-title">
+          <h2 id="form-title" class="panel-title">Escríbenos</h2>
+          <form action="#" method="post" class="row g-3" autocomplete="on" novalidate>
             <div class="col-12">
               <label for="nombre" class="form-label">Nombre</label>
-              <input id="nombre" name="nombre" type="text" class="form-control" placeholder="Tu nombre" required>
+              <input id="nombre" name="nombre" type="text" class="form-control"
+                     placeholder="Tu nombre" required autocomplete="name" />
             </div>
 
             <div class="col-12 col-md-6">
               <label for="correo" class="form-label">Correo electrónico</label>
-              <input id="correo" name="correo" type="email" class="form-control" placeholder="tu@correo.com" required>
+              <input id="correo" name="correo" type="email" class="form-control"
+                     placeholder="tu@correo.com" required autocomplete="email" inputmode="email" />
             </div>
 
             <div class="col-12 col-md-6">
               <label for="asunto" class="form-label">Asunto</label>
-              <input id="asunto" name="asunto" type="text" class="form-control" placeholder="Motivo del mensaje" required>
+              <input id="asunto" name="asunto" type="text" class="form-control"
+                     placeholder="Motivo del mensaje" required />
             </div>
 
             <div class="col-12">
               <label for="mensaje" class="form-label">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" rows="5" class="form-control" placeholder="Escribe tu mensaje..." required></textarea>
+              <textarea id="mensaje" name="mensaje" rows="5" class="form-control"
+                        placeholder="Escribe tu mensaje..." required></textarea>
             </div>
 
             <div class="col-12 text-end">
@@ -130,28 +153,29 @@
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer__inner">
       <div class="footer__col">
-        <p><a href="tel:+51321126" class="fw-semibold">(01) 321 126</a></p>
+        <p><a href="tel:+51321126" class="fw-semibold" aria-label="Llamar al Politécnico">(01) 321 126</a></p>
         <p><a href="mailto:informes@poli.edu.pe">informes@poli.edu.pe</a></p>
         <p class="small text-justify">La Institución Educativa Secundaria Pública “Politécnico Regional Los Andes” de Juliaca se creó el 15 de mayo de 1928 por Resolución Suprema N° 569...</p>
       </div>
       <div class="footer__col">
         <h3 class="h6">CONTROL</h3>
-        <img src="../imagenes/logos/logo-minedu.png" alt="Logo MINEDU" />
+        <img src="../imagenes/logos/logo-minedu.webp" alt="Logo MINEDU" loading="lazy" decoding="async" />
         <h3 class="h6 mt-3">AFILIADOS</h3>
-        <img src="../imagenes/logos/logo-Dreppng-removebg-preview.png" alt="Logo DREP" />
+        <img src="../imagenes/logos/logo-Dreppng-removebg-preview.webp" alt="Logo DREP" loading="lazy" decoding="async" />
       </div>
       <div class="footer__col">
         <h3 class="h6">ALIANZA CON</h3>
-        <img src="../imagenes/logos/499752886_989433863349608_5351641011497920617_n-removebg-preview.png" class="footer-logo-big" alt="Logo aliado" />
+        <img src="../imagenes/logos/499752886_989433863349608_5351641011497920617_n-removebg-preview.webp"
+             class="footer-logo-big" alt="Logo aliado" loading="lazy" decoding="async" />
       </div>
     </div>
     <p class="copy">© 2025 Politécnico Regional Los Andes. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Bootstrap JS (navbar + formulario validación básica) -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
           crossorigin="anonymous"></script>
